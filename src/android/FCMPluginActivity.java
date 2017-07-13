@@ -53,7 +53,7 @@ public class FCMPluginActivity extends Activity {
 	    forceMainActivityReload();
 	} */
     }
-	/*
+	
 	public boolean isMainActivityRunning(String packageName) {
 	    ActivityManager activityManager = (ActivityManager) getSystemService (Context.ACTIVITY_SERVICE);
 	    List<RunningTaskInfo> tasksInfo = activityManager.getRunningTasks(Integer.MAX_VALUE); 
@@ -64,7 +64,7 @@ public class FCMPluginActivity extends Activity {
 	    }
 
 	    return false;
-	} */
+	} 
 
     private void forceMainActivityReload() {
         PackageManager pm = getPackageManager();
