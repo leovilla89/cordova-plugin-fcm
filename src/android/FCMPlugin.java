@@ -36,6 +36,14 @@ public class FCMPlugin extends CordovaPlugin {
 		FirebaseMessaging.getInstance().subscribeToTopic("all");
 	}
 	
+	@Override
+    public void onDestroy() {
+        super.onDestroy();
+        gForeground = false;
+		gECB = null;
+		gWebView = null;
+    }
+	
 	public static boolean isActive()
 	    {
 		return gWebView != null;
