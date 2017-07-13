@@ -11,6 +11,7 @@ import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;
 import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
+import android.content.ComponentName;
 import android.util.Log;
 import java.util.Map;
 import java.util.HashMap;
