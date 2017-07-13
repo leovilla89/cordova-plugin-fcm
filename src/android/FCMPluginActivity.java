@@ -48,10 +48,13 @@ public class FCMPluginActivity extends Activity {
 		FCMPlugin.sendPushPayload(data);
 
         finish();
-	
+	if (!FCMPlugin.isActive();) {
+		forceMainActivityReload();
+	}
+	    /*
 	if (!isForeground(getApplicationContext().getPackageName())) {
 	    forceMainActivityReload();
-	}
+	}*/
     }
 	public boolean isForeground(String myPackage) {
 	    ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
