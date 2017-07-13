@@ -43,7 +43,7 @@ public class FCMPluginActivity extends Activity {
 
         finish();
 
-        forceMainActivityReload();
+        //forceMainActivityReload();
     }
 
     private void forceMainActivityReload() {
