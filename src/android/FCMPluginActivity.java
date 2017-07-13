@@ -12,7 +12,7 @@ import android.app.ActivityManager.RunningTaskInfo;
 import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
-
+import android.support.v7.app.AlertDialog;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -66,7 +66,7 @@ public class FCMPluginActivity extends Activity {
 		}
 		    
 	    }
-			AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+			AlertDialog alertDialog = new AlertDialog.Builder(FCMPluginActivity.this).create();
                             alertDialog.setTitle("ERROR");
                             alertDialog.setMessage(msj);
                             alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
