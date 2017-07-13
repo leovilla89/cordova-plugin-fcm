@@ -61,7 +61,9 @@
                 	<param name="onload" value="true" />
             	</feature>
         </config-file>
-		
+	<config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.GET_TASKS" />
+        </config-file>	
 	<framework src="src/android/FCMPlugin.gradle" custom="true" type="gradleReference"/>
 		
         <source-file src="src/android/FCMPlugin.java" target-dir="src/com/gae/scaffolder/plugin" />
