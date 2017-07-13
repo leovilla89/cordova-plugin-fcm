@@ -7,20 +7,19 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.app.ActivityManager;
-import android.app.ActivityManager.RunningAppProcessInfo;
-import android.app.ActivityManager.RunningTaskInfo;
+//import android.app.ActivityManager;
+//import android.app.ActivityManager.RunningTaskInfo;
 import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
 import java.util.Map;
 import java.util.HashMap;
-
+/*
 import java.util.*;
 import java.util.Arrays;
 import java.util.List;
-
+*/
 public class FCMPluginActivity extends Activity {
     private static String TAG = "FCMPlugin";
 
@@ -54,7 +53,7 @@ public class FCMPluginActivity extends Activity {
 	    forceMainActivityReload();
 	} */
     }
-	
+	/*
 	public boolean isMainActivityRunning(String packageName) {
 	    ActivityManager activityManager = (ActivityManager) getSystemService (Context.ACTIVITY_SERVICE);
 	    List<RunningTaskInfo> tasksInfo = activityManager.getRunningTasks(Integer.MAX_VALUE); 
@@ -65,7 +64,7 @@ public class FCMPluginActivity extends Activity {
 	    }
 
 	    return false;
-	} 
+	} */
 
     private void forceMainActivityReload() {
         PackageManager pm = getPackageManager();
