@@ -52,7 +52,7 @@ public class FCMPluginActivity extends Activity {
 	    List<RunningTaskInfo> tasksInfo = activityManager.getRunningTasks(Integer.MAX_VALUE); 
 
 	    for (int i = 0; i < tasksInfo.size(); i++) {
-		if (tasksInfo.get(i).baseActivity.getPackageName().toString().equals(packageName)
+		if (tasksInfo.get(i).baseActivity.getPackageName().toString().equals(packageName))
 		    return true;
 	    }
 
