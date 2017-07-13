@@ -48,7 +48,7 @@ public class FCMPluginActivity extends Activity {
 		FCMPlugin.sendPushPayload(data);
 
         finish();
-	if (!FCMPlugin.isActive();) {
+	if (!FCMPlugin.isActive()) {
 		forceMainActivityReload();
 	}
 	    /*
