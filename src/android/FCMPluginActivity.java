@@ -48,10 +48,16 @@ public class FCMPluginActivity extends Activity {
 
         finish();
 	
-	if (!isMainActivityRunning(getApplicationContext().getPackageName())) {
+	if (!isForeground(getApplicationContext().getPackageName())) {
 	    forceMainActivityReload();
 	}
     }
+	public boolean isForeground(String myPackage) {
+	    ActivityManager manager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+	    List<ActivityManager.RunningTaskInfo> runningTaskInfo = manager.getRunningTasks(1); 
+	    ComponentName componentInfo = runningTaskInfo.get(0).topActivity;
+	    return componentInfo.getPackageName().equals(myPackage);
+	}
 	
 	public boolean isMainActivityRunning(String packageName) {
 	    ActivityManager activityManager = (ActivityManager) getSystemService (Context.ACTIVITY_SERVICE);
