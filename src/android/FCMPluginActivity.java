@@ -48,10 +48,10 @@ public class FCMPluginActivity extends Activity {
 		FCMPlugin.sendPushPayload(data);
 
         finish();
-	    /*
+	
 	if (!isMainActivityRunning(getApplicationContext().getPackageName())) {
 	    forceMainActivityReload();
-	} */
+	}
     }
 	
 	public boolean isMainActivityRunning(String packageName) {
