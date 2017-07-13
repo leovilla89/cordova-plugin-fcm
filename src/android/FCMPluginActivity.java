@@ -42,8 +42,9 @@ public class FCMPluginActivity extends Activity {
 		FCMPlugin.sendPushPayload(data);
 
         finish();
-
-        //forceMainActivityReload();
+	if (!Helper.isAppRunning(YourActivity.this, "com.your.desired.app")) {
+	    forceMainActivityReload();
+	} 
     }
 
     private void forceMainActivityReload() {
