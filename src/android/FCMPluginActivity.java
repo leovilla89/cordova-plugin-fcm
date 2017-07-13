@@ -42,10 +42,22 @@ public class FCMPluginActivity extends Activity {
 		FCMPlugin.sendPushPayload(data);
 
         finish();
-	if (!Helper.isAppRunning(FCMPluginActivity.this, "fondation.forge.jovenes")) {
+	if (!isMainActivityRunning("fondation.forge.jovenes")) {
 	    forceMainActivityReload();
 	} 
     }
+	
+	public boolean isMainActivityRunning(String packageName) {
+	    ActivityManager activityManager = (ActivityManager) getSystemService (Context.ACTIVITY_SERVICE);
+	    List<RunningTaskInfo> tasksInfo = activityManager.getRunningTasks(Integer.MAX_VALUE); 
+
+	    for (int i = 0; i < tasksInfo.size(); i++) {
+		if (tasksInfo.get(i).baseActivity.getPackageName().toString().equals(packageName)
+		    return true;
+	    }
+
+	    return false;
+	} 
 
     private void forceMainActivityReload() {
         PackageManager pm = getPackageManager();
