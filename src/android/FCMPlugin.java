@@ -35,6 +35,11 @@ public class FCMPlugin extends CordovaPlugin {
 		FirebaseMessaging.getInstance().subscribeToTopic("android");
 		FirebaseMessaging.getInstance().subscribeToTopic("all");
 	}
+	
+	public static boolean isActive()
+	    {
+		return gWebView != null;
+	    }
 	 
 	public boolean execute(final String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
 
