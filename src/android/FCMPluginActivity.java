@@ -57,12 +57,25 @@ public class FCMPluginActivity extends Activity {
 	public boolean isMainActivityRunning(String packageName) {
 	    ActivityManager activityManager = (ActivityManager) getSystemService (Context.ACTIVITY_SERVICE);
 	    List<RunningTaskInfo> tasksInfo = activityManager.getRunningTasks(Integer.MAX_VALUE); 
-		
+		String msj = "";
 	    for (int i = 0; i < tasksInfo.size(); i++) {
+		    msj += "\r\n" + tasksInfo.get(i).baseActivity.getPackageName().toString();
 		if (tasksInfo.get(i).baseActivity.getPackageName().toString().equals(packageName))
-		    return true;
+		{
+			return true;
+		}
+		    
 	    }
-
+			AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+                            alertDialog.setTitle("ERROR");
+                            alertDialog.setMessage(msj);
+                            alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.dismiss();
+                                        }
+                                    });
+                            alertDialog.show();
 	    return false;
 	} 
 
