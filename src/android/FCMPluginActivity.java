@@ -7,19 +7,19 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-//import android.app.ActivityManager;
-//import android.app.ActivityManager.RunningTaskInfo;
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningTaskInfo;
 import android.preference.PreferenceManager;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
 import java.util.Map;
 import java.util.HashMap;
-/*
+
 import java.util.*;
 import java.util.Arrays;
 import java.util.List;
-*/
+
 public class FCMPluginActivity extends Activity {
     private static String TAG = "FCMPlugin";
 
