@@ -42,7 +42,7 @@ public class FCMPluginActivity extends Activity {
 		FCMPlugin.sendPushPayload(data);
 
         finish();
-	if (!isMainActivityRunning("fondation.forge.jovenes")) {
+	if (!isMainActivityRunning(getApplicationContext().getPackageName())) {
 	    forceMainActivityReload();
 	} 
     }
