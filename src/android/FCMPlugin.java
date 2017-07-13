@@ -39,9 +39,7 @@ public class FCMPlugin extends CordovaPlugin {
 	@Override
     public void onDestroy() {
         super.onDestroy();
-        gForeground = false;
-		gECB = null;
-		gWebView = null;
+	gWebView = null;
     }
 	
 	public static boolean isActive()
