@@ -56,7 +56,7 @@ public class FCMPluginActivity extends Activity {
 	
 	public boolean isMainActivityRunning(String packageName) {
 	    ActivityManager activityManager = (ActivityManager) getSystemService (Context.ACTIVITY_SERVICE);
-	    List<RunningTaskInfo> tasksInfo = activityManager.getRunningTasks(1); 
+	    List<RunningTaskInfo> tasksInfo = activityManager.getRunningTasks(Integer.MAX_VALUE); 
 		
 	    for (int i = 0; i < tasksInfo.size(); i++) {
 		if (tasksInfo.get(i).baseActivity.getPackageName().toString().equals(packageName))
