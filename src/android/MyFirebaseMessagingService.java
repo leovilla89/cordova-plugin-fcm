@@ -85,22 +85,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 	
-	executeJavascript("cordova.plugins.notification.local.cancelAll()", FCMPlugin.gWebView);
+	FCMPlugin.executeJavascript("cordova.plugins.notification.local.cancelAll()");
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
     }
-	
-	private static synchronized void executeJavascript(final String strJS, CordovaWebView myWebView) {
-
-		    Runnable jsLoader = new Runnable() {
-			public void run() {
-			    myWebView.loadUrl("javascript:" + strJS);
-			}
-		    };
-		    try {
-			Method post = myWebView.getClass().getMethod("post",Runnable.class);
-			post.invoke(myWebView,jsLoader);
-		    } catch(Exception e) {
-			((Activity)(myWebView.getContext())).runOnUiThread(jsLoader);
-		    }
-		}
 }
