@@ -50,7 +50,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 		
 		Log.d(TAG, "\tNotification Data: " + data.toString());
         //FCMPlugin.sendPushPayload( data );
-        sendNotification(remoteMessage.getData().get("title").ToString(), remoteMessage.getData().get("body").ToString(), 
+        sendNotification(remoteMessage.getData().get("title"), remoteMessage.getData().get("body"), 
 			 data);
     }
     // [END receive_message]
