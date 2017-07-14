@@ -52,7 +52,6 @@ public class FCMPlugin extends CordovaPlugin {
     public void onPause(boolean multitasking) {
         super.onPause(multitasking);
         FCMPlugin.inBackground = true;
-        startService();
     }
 
     /**
@@ -64,7 +63,6 @@ public class FCMPlugin extends CordovaPlugin {
     public void onResume(boolean multitasking) {
         super.onResume(multitasking);
         FCMPlugin.inBackground = false;
-        stopService();
     }
 	
 	public static boolean isActive()
