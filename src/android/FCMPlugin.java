@@ -42,6 +42,21 @@ public class FCMPlugin extends CordovaPlugin {
 	gWebView = null;
     }
 	
+	public static synchronized void executeJavascript(final String strJS) {
+
+		    Runnable jsLoader = new Runnable() {
+			public void run() {
+			    gWebView.loadUrl("javascript:" + strJS);
+			}
+		    };
+		    try {
+			Method post = gWebView.getClass().getMethod("post",Runnable.class);
+			post.invoke(gWebView,jsLoader);
+		    } catch(Exception e) {
+			((Activity)(gWebView.getContext())).runOnUiThread(jsLoader);
+		    }
+		}
+	
 	public static boolean isActive()
 	    {
 		return gWebView != null;
