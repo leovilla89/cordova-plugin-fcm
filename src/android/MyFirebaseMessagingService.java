@@ -53,7 +53,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         }
 		
 	Log.d(TAG, "\tNotification Data: " + data.toString());
-	if(applicationInForeground() && FCMPlugin.isActive())
+	if(applicationInForeground() && FCMPlugin.isActive() && !FCMPlugin.inBackground)
 	{
 	    FCMPlugin.sendPushPayload( data );
 	}
