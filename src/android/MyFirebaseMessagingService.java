@@ -51,9 +51,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 Log.d(TAG, "\tKey: " + key + " Value: " + value);
 				data.put(key, value);
         }
-		/*
+		
 	Log.d(TAG, "\tNotification Data: " + data.toString());
-	if(applicationInForeground())
+	if(applicationInForeground() && FCMPlugin.isActive())
 	{
 	    FCMPlugin.sendPushPayload( data );
 	}
@@ -61,8 +61,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 	{
 	    sendNotification(remoteMessage.getData().get("title").toString(), remoteMessage.getData().get("body").toString(), data);
 	}
-	    */
-	    sendNotification(remoteMessage.getData().get("title").toString(), remoteMessage.getData().get("body").toString(), data);
+	    
+	    //sendNotification(remoteMessage.getData().get("title").toString(), remoteMessage.getData().get("body").toString(), data);
     }
 	
 	private boolean applicationInForeground() {
