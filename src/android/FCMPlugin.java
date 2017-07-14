@@ -37,9 +37,9 @@ public class FCMPlugin extends CordovaPlugin {
 		FirebaseMessaging.getInstance().subscribeToTopic("all");
 	}
 	
-	public static void CallJS(js)
+	public static void CallJS(String js)
 	{
-		gWebView.sendJavascript(js);
+		gWebView.sendJavascript("javascript:"+js);
 	}
 	
 	@Override
