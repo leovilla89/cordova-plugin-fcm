@@ -21,7 +21,7 @@ import java.util.Map;
 public class FCMPlugin extends CordovaPlugin {
  
 	private static final String TAG = "FCMPlugin";
-	
+	public static Boolean inBackground = false;
 	public static CordovaWebView gWebView;
 	public static String notificationCallBack = "FCMPlugin.onNotificationReceived";
 	public static Boolean notificationCallBackReady = false;
@@ -46,8 +46,26 @@ public class FCMPlugin extends CordovaPlugin {
     public void onDestroy() {
         super.onDestroy();
 	gWebView = null;
+	    FCMPlugin.inBackground = true;
     }
-	
+	@Override
+    public void onPause(boolean multitasking) {
+        super.onPause(multitasking);
+        FCMPlugin.inBackground = true;
+        startService();
+    }
+
+    /**
+     * Called when the activity will start interacting with the user.
+     *
+     * @param multitasking Flag indicating if multitasking is turned on for app.
+     */
+    @Override
+    public void onResume(boolean multitasking) {
+        super.onResume(multitasking);
+        FCMPlugin.inBackground = false;
+        stopService();
+    }
 	
 	public static boolean isActive()
 	    {
