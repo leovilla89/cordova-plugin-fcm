@@ -14,6 +14,11 @@ import java.util.HashMap;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+
+import java.lang.Runnable;
+import org.apache.cordova.CordovaWebView;
+import java.lang.reflect.Method;
+import android.app.Activity;
 /**
  * Created by Felipe Echanique on 08/06/2016.
  */
