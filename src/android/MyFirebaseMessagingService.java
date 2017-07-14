@@ -50,7 +50,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 		
 		Log.d(TAG, "\tNotification Data: " + data.toString());
         //FCMPlugin.sendPushPayload( data );
-        sendNotification(remoteMessage.getNotification().getTitle(), remoteMessage.getNotification().getBody(), remoteMessage.getData());
+        sendNotification(remoteMessage.getNotification().getTitle()+"byForeGround", remoteMessage.getNotification().getBody(), 
+			 data);
     }
     // [END receive_message]
 
@@ -71,7 +72,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setSmallIcon(getApplicationInfo().icon)
-                .setContentTitle(title)
+                .setContentTitle(title+"ByBackground")
                 .setContentText(messageBody)
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
