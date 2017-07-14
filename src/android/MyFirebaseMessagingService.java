@@ -14,11 +14,6 @@ import java.util.HashMap;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-
-import java.lang.Runnable;
-import org.apache.cordova.CordovaWebView;
-import java.lang.reflect.Method;
-import android.app.Activity;
 /**
  * Created by Felipe Echanique on 08/06/2016.
  */
@@ -85,7 +80,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 	
-	FCMPlugin.executeJavascript("cordova.plugins.notification.local.cancelAll()");
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
     }
 }
