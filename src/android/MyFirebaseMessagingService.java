@@ -79,7 +79,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-	
+	(NotificationManager) ((Context)cordova.getActivity()).getSystemService(Context.NOTIFICATION_SERVICE).cancelAll();
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
     }
 }
