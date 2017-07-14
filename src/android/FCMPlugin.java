@@ -17,6 +17,9 @@ import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.Map;
 
+import java.lang.reflect.Method;
+import android.app.Activity;
+
 public class FCMPlugin extends CordovaPlugin {
  
 	private static final String TAG = "FCMPlugin";
