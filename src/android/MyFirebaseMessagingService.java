@@ -49,7 +49,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         }
 		
 	Log.d(TAG, "\tNotification Data: " + data.toString());
-	if(FCMPlugin.isActive())
+	if(applicationInForeground())
 	{
 	    FCMPlugin.sendPushPayload( data );
 	}
@@ -58,6 +58,19 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 	    sendNotification(remoteMessage.getData().get("title").toString(), remoteMessage.getData().get("body").toString(), data);
 	}
     }
+	
+	private boolean applicationInForeground() {
+	    ActivityManager activityManager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+	    List<ActivityManager.RunningAppProcessInfo> services = activityManager.getRunningAppProcesses();
+	    boolean isActivityFound = false;
+
+	    if (services.get(0).processName
+		    .equalsIgnoreCase(getPackageName())) {
+		isActivityFound = true;
+	    }
+
+	    return isActivityFound;
+	}
     // [END receive_message]
 
     /**
