@@ -16,6 +16,8 @@ import com.google.firebase.messaging.RemoteMessage;
 
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
+
+import java.util.List;
 /**
  * Created by Felipe Echanique on 08/06/2016.
  */
